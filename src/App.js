@@ -2,16 +2,17 @@ import React from 'react';
 import { ArrowDown } from "react-feather";
 import './App.css';
 import Header from './components/header/Header';
+import Editor from './components/editor/Editor'
 
 function App() {
-  const colors = ["#239ce2", "#48bb78", "#0bc5ea", "#a0aec0", "#ed8936"];
+  const colors = ["blue", "red", "black"];
   const sections = {
     basicInfo: "Basic Info",
     workExp: "Work Experience",
     project: "Projects",
     education: "Education",
     achievement: "Achievements",
-    summary: "Summary",
+    skill: "Skills",
     other: "Other",
   };
   return (
@@ -31,7 +32,7 @@ function App() {
           Download <ArrowDown />
         </button>
       </div>
-      <div className='he'></div>
+      <Editor sections ={sections} />      
     </div>
   );
 }

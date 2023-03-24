@@ -1,10 +1,10 @@
 import React from "react";
 
-import './headerStyle.css';
+import styles from './Header.module.css';
 
 function Header(){
     return (
-      <div className="header">
+      <div className={styles.mainheader}>
           <h1>Resumen_</h1>
           <p>Online Resume Builder</p>
       </div>

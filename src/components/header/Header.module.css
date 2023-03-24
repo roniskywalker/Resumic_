@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Acme&family=Creepster&family=Lobster&family=Press+Start+2P&family=Roboto+Mono&display=swap');
+
+.mainheader{
+    padding: 25px 0 25px 25px;
+    background-color: aliceblue;
+    color:#1f2023;
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+h1{
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1.4em;
+}
+
+p{
+    font-weight: 600;
+}

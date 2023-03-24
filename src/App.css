@@ -21,8 +21,8 @@
 
 .colors .color {
   cursor: pointer;
-  height: 35px;
-  width: 35px;
+  height: 30px;
+  width: 30px;
   border-radius: 50%;
   background-color: #239ce2;
 }
@@ -50,8 +50,4 @@
 .toolbar button svg {
   height: 20px;
   width: 20px;
-}
-
-.he{
-  height: 100vh;
 }
