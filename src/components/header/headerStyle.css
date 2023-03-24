@@ -8,6 +8,10 @@
     padding-bottom: 25px;
     background-color: aliceblue;
     color:#1f2023;
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
 }
 
 header h1{
