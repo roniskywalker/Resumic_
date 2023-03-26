@@ -433,7 +433,7 @@ function Editor(props) {
         const tempDetail = {
           name: values.name,
           linkedin: values.linkedin,
-          leetcode:values.leetcode,
+          leetcode: values.leetcode,
           github: values.github,
           email: values.email,
           phone: values.phone,
@@ -552,7 +552,42 @@ function Editor(props) {
         }));
         break;
       }
+      default:
+        return null;
     }
+  };
+
+  const handleAddNew = () => {
+    const details = activeInformation?.details;
+    if (!details) return;
+    const lastDetail = details.slice(-1)[0];
+    if (!Object.keys(lastDetail).length) return;
+    details?.push({});
+
+    props.setInformation((prev) => ({
+      ...prev,
+      [sections[activeSectionKey]]: {
+        ...information[sections[activeSectionKey]],
+        details: details,
+      },
+    }));
+    setActiveDetailIndex(details?.length - 1);
+  };
+
+  const handleDeleteDetail = (index) => {
+    const details = activeInformation?.details
+      ? [...activeInformation?.details]
+      : "";
+    if (!details) return;
+    details.splice(index, 1);
+    props.setInformation((prev) => ({
+      ...prev,
+      [sections[activeSectionKey]]: {
+        ...information[sections[activeSectionKey]],
+        details: details,
+      },
+    }));
+    setActiveDetailIndex((prev) => (prev === index ? 0 : prev - 1));
   };
 
   useEffect(() => {
@@ -611,6 +646,30 @@ function Editor(props) {
     setActiveInformation(information[sections[activeSectionKey]]);
   }, [information]);
 
+  useEffect(() => {
+    const details = activeInformation?.details;
+    if (!details) return;
+
+    const activeInfo = information[sections[activeSectionKey]];
+    setValues({
+      overview: activeInfo.details[activeDetailIndex]?.overview || "",
+      link: activeInfo.details[activeDetailIndex]?.link || "",
+      certificationLink:
+        activeInfo.details[activeDetailIndex]?.certificationLink || "",
+      companyName: activeInfo.details[activeDetailIndex]?.companyName || "",
+      location: activeInfo.details[activeDetailIndex]?.location || "",
+      startDate: activeInfo.details[activeDetailIndex]?.startDate || "",
+      endDate: activeInfo.details[activeDetailIndex]?.endDate || "",
+      points: activeInfo.details[activeDetailIndex]?.points || "",
+      linkedin: activeInfo.details[activeDetailIndex]?.linkedin || "",
+      github: activeInfo.details[activeDetailIndex]?.github || "",
+      college: activeInfo.details[activeDetailIndex]?.college || "",
+      jobTitle: activeInfo.details[activeDetailIndex]?.jobTitle || "",
+      projectTitle: activeInfo.details[activeDetailIndex]?.projectTitle || "",
+      degree: activeInfo.details[activeDetailIndex]?.degree || "",
+    });
+  }, [activeDetailIndex]);
+
   return (
     <div className={styles.container}>
       <div className={styles.heading}>
@@ -634,6 +693,39 @@ function Editor(props) {
           value={sectionTitle}
           onChange={(event) => setSectionTitle(event.target.value)}
         />
+
+        <div className={styles.chips}>
+          {activeInformation?.details
+            ? activeInformation?.details?.map((item, index) => (
+                <div
+                  className={`${styles.chip} ${
+                    activeDetailIndex === index ? styles.active : ""
+                  }`}
+                  key={item.title + index}
+                  onClick={() => setActiveDetailIndex(index)}
+                >
+                  <p>
+                    {sections[activeSectionKey]} {index + 1}
+                  </p>
+                  <X
+                    onClick={(event) => {
+                      event.stopPropagation();
+                      handleDeleteDetail(index);
+                    }}
+                  />
+                </div>
+              ))
+            : ""}
+          {activeInformation?.details &&
+          activeInformation?.details?.length > 0 ? (
+            <div className={styles.new} onClick={handleAddNew}>
+              +New
+            </div>
+          ) : (
+            ""
+          )}
+        </div>
+
         {generateBody()}
 
         <button onClick={handleSubmission}>Save</button>

@@ -55,6 +55,10 @@ const [resumeInformation, setResumeInformation] = useState({
   },
 });
 
+useEffect(()=>{
+  console.log(resumeInformation)
+},[resumeInformation])
+
   return (
     <div className="App">
       <Header />
