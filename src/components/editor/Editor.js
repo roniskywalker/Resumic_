@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { X } from "react-feather";
 
-import InputControl from "../InputControl/InputControl";
+import InputControl from "../inputControl/InputControl";
 import styles from "./Editor.module.css";
 
 function Editor(props) {
@@ -187,7 +187,7 @@ function Editor(props) {
           value={values.projectTitle}
           placeholder="Enter project title eg. Chat app"
           onChange={(event) =>
-            setValues((prev) => ({ ...prev, title: event.target.value }))
+            setValues((prev) => ({ ...prev, projectTitle: event.target.value }))
           }
         />
       </div>

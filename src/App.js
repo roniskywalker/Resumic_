@@ -1,8 +1,11 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState, useRef} from 'react';
 import { ArrowDown } from "react-feather";
+import ReactToPrint from "react-to-print";
+
 import './App.css';
 import Header from './components/header/Header';
-import Editor from './components/editor/Editor'
+import Editor from './components/editor/Editor';
+import Preview from "./components/preview/Preview";
 
 function App() {
   const colors = ["blue", "red", "black"];
@@ -16,7 +19,11 @@ function App() {
     other: "Other",
   };
 
+  const resumeRef = useRef();
+
+
 const [activeColor, setActiveColor] = useState(colors[0]);
+
 const [resumeInformation, setResumeInformation] = useState({
   [sections.basicInfo]: {
     id: sections.basicInfo,
@@ -55,33 +62,48 @@ const [resumeInformation, setResumeInformation] = useState({
   },
 });
 
-useEffect(()=>{
-  console.log(resumeInformation)
-},[resumeInformation])
+// useEffect(()=>{
+//   console.log(resumeInformation)
+// },[resumeInformation])
 
   return (
     <div className="App">
       <Header />
-      <div className="toolbar">
-        <div className="colors">
-          {colors.map((item) => (
-            <span
-              key={item}
-              style={{ backgroundColor: item }}
-              className={`color ${activeColor === item ? ".active" : ""}`}
-              onClick={() => setActiveColor(item)}
-            />
-          ))}
+      <div className="Body">
+        <div className="toolbar">
+          <div className="colors">
+            {colors.map((item) => (
+              <span
+                key={item}
+                style={{ backgroundColor: item }}
+                className={`color ${activeColor === item ? ".active" : ""}`}
+                onClick={() => setActiveColor(item)}
+              />
+            ))}
+          </div>
+          <ReactToPrint
+            trigger={() => {
+              return (
+                <button>
+                  Download <ArrowDown />
+                </button>
+              );
+            }}
+            content={() => resumeRef.current}
+          />
         </div>
-        <button>
-          Download <ArrowDown />
-        </button>
+        <Editor
+          sections={sections}
+          information={resumeInformation}
+          setInformation={setResumeInformation}
+        />
+        <Preview
+          ref={resumeRef}
+          sections={sections}
+          information={resumeInformation}
+          activeColor={activeColor}
+        />
       </div>
-      <Editor
-        sections={sections}
-        information={resumeInformation}
-        setInformation={setResumeInformation}
-      />
     </div>
   );
 }
