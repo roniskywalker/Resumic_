@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Acme&family=Creepster&family=Lobster&family=Press+Start+2P&family=Roboto+Mono&display=swap');
+
 *{
     margin: 0;
     padding: 0;
@@ -35,7 +37,10 @@
   background-color: #239ce2;
 }
 .colors .active {
-  border: 2px solid #425804;
+  margin: auto;
+  height: 25px;
+  width: 25px;
+  border: 3px solid #698813;
 }
 
 .toolbar button {
@@ -58,4 +63,9 @@
 .toolbar button svg {
   height: 20px;
   width: 20px;
+}
+
+.subheading h1{
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1.6em;
 }

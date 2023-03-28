@@ -323,20 +323,6 @@ const Preview = forwardRef((props, ref) => {
           <p className={styles.heading}>{info.basicInfo?.detail?.name}</p>
 
           <div className={styles.links}>
-            {info.basicInfo?.detail?.email ? (
-              <a className={styles.link} type="email">
-                <AtSign /> {info.basicInfo?.detail?.email}
-              </a>
-            ) : (
-              <span />
-            )}
-            {info.basicInfo?.detail?.phone ? (
-              <a className={styles.link}>
-                <Phone /> {info.basicInfo?.detail?.phone}
-              </a>
-            ) : (
-              <span />
-            )}
             {info.basicInfo?.detail?.linkedin ? (
               <a className={styles.link}>
                 <Linkedin /> {info.basicInfo?.detail?.linkedin}
@@ -354,6 +340,23 @@ const Preview = forwardRef((props, ref) => {
             {info.basicInfo?.detail?.leetcode ? (
               <a className={styles.link}>
                 <Code /> {info.basicInfo?.detail?.leetcode}
+              </a>
+            ) : (
+              <span />
+            )}
+          </div>
+
+          <div className={styles.links}>
+            {info.basicInfo?.detail?.email ? (
+              <a className={styles.link} type="email">
+                <AtSign /> {info.basicInfo?.detail?.email}
+              </a>
+            ) : (
+              <span />
+            )}
+            {info.basicInfo?.detail?.phone ? (
+              <a className={styles.link}>
+                <Phone /> {info.basicInfo?.detail?.phone}
               </a>
             ) : (
               <span />

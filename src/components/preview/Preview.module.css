@@ -9,7 +9,7 @@
   box-shadow: 1px 1px 3px 2px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 20px;
   padding: 30px;
 }
 
@@ -22,6 +22,7 @@
   font-size: 2.7rem;
   font-weight: 500;
   text-transform: capitalize;
+  margin: 1px auto;
 }
 
 .header .subHeading {
@@ -36,6 +37,7 @@
   gap: 30px;
   flex-wrap: wrap;
   row-gap: 10px;
+  margin: 5px auto 0px;
 }
 
 .header .link {

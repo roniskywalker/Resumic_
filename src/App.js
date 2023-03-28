@@ -76,7 +76,7 @@ const [resumeInformation, setResumeInformation] = useState({
               <span
                 key={item}
                 style={{ backgroundColor: item }}
-                className={`color ${activeColor === item ? ".active" : ""}`}
+                className={`color ${activeColor === item ? "active" : ""}`}
                 onClick={() => setActiveColor(item)}
               />
             ))}
@@ -92,11 +92,17 @@ const [resumeInformation, setResumeInformation] = useState({
             content={() => resumeRef.current}
           />
         </div>
+        <div className="subheading">
+          <h1>Fill your details here</h1>
+        </div>
         <Editor
           sections={sections}
           information={resumeInformation}
           setInformation={setResumeInformation}
         />
+        <div className="subheading">
+          <h1>Preview</h1>
+        </div>
         <Preview
           ref={resumeRef}
           sections={sections}

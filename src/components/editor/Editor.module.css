@@ -90,7 +90,7 @@
   padding: 4px 8px;
   background-color: #808080;
   border-radius: 20px;
-  cursor: default;
+  cursor: pointer;
 }
 
 .chip p {
@@ -100,6 +100,8 @@
 }
 .chip svg {
   color: #fff;
+  background-color: rgb(92, 177, 177);
+  border-radius: 50%;
   height: 18px;
   width: 18px;
   cursor: pointer;
@@ -107,6 +109,10 @@
 
 .chips .active {
   background-color: #239ce2;
+}
+
+.chips .active svg{
+  background-color: #208bc9;
 }
 
 .body button {
