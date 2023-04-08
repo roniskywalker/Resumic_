@@ -1,14 +1,14 @@
-import React, {useState, useRef} from 'react';
+import React, { useState, useRef } from "react";
 import { ArrowDown } from "react-feather";
 import ReactToPrint from "react-to-print";
 
-import './App.css';
-import Header from './components/header/Header';
-import Editor from './components/editor/Editor';
+import "./App.css";
+import Header from "./components/header/Header";
+import Editor from "./components/editor/Editor";
 import Preview from "./components/preview/Preview";
 
 function App() {
-  const colors = ["blue", "red", "black"];
+  const colors = ["black", "blue", "red"];
   const sections = {
     basicInfo: "Basic Info",
     workExp: "Work Experience",
@@ -21,50 +21,49 @@ function App() {
 
   const resumeRef = useRef();
 
+  const [activeColor, setActiveColor] = useState(colors[0]);
 
-const [activeColor, setActiveColor] = useState(colors[0]);
+  const [resumeInformation, setResumeInformation] = useState({
+    [sections.basicInfo]: {
+      id: sections.basicInfo,
+      sectionTitle: sections.basicInfo,
+      detail: {},
+    },
+    [sections.workExp]: {
+      id: sections.workExp,
+      sectionTitle: sections.workExp,
+      details: [],
+    },
+    [sections.project]: {
+      id: sections.project,
+      sectionTitle: sections.project,
+      details: [],
+    },
+    [sections.education]: {
+      id: sections.education,
+      sectionTitle: sections.education,
+      details: [],
+    },
+    [sections.achievement]: {
+      id: sections.achievement,
+      sectionTitle: sections.achievement,
+      points: [],
+    },
+    [sections.skill]: {
+      id: sections.skill,
+      sectionTitle: sections.skill,
+      points: [],
+    },
+    [sections.other]: {
+      id: sections.other,
+      sectionTitle: sections.other,
+      detail: "",
+    },
+  });
 
-const [resumeInformation, setResumeInformation] = useState({
-  [sections.basicInfo]: {
-    id: sections.basicInfo,
-    sectionTitle: sections.basicInfo,
-    detail: {},
-  },
-  [sections.workExp]: {
-    id: sections.workExp,
-    sectionTitle: sections.workExp,
-    details: [],
-  },
-  [sections.project]: {
-    id: sections.project,
-    sectionTitle: sections.project,
-    details: [],
-  },
-  [sections.education]: {
-    id: sections.education,
-    sectionTitle: sections.education,
-    details: [],
-  },
-  [sections.achievement]: {
-    id: sections.achievement,
-    sectionTitle: sections.achievement,
-    points: [],
-  },
-  [sections.skill]: {
-    id: sections.skill,
-    sectionTitle: sections.skill,
-    points: [],
-  },
-  [sections.other]: {
-    id: sections.other,
-    sectionTitle: sections.other,
-    detail: "",
-  },
-});
-
-// useEffect(()=>{
-//   console.log(resumeInformation)
-// },[resumeInformation])
+  // useEffect(()=>{
+  //   console.log(resumeInformation)
+  // },[resumeInformation])
 
   return (
     <div className="App">
@@ -92,23 +91,29 @@ const [resumeInformation, setResumeInformation] = useState({
             content={() => resumeRef.current}
           />
         </div>
-        <div className="subheading">
-          <h1>Fill your details here</h1>
+        <div className="main">
+          <div className="main1">
+            <div className="subheading">
+              <h1>Fill your details here</h1>
+            </div>
+            <Editor
+              sections={sections}
+              information={resumeInformation}
+              setInformation={setResumeInformation}
+            />
+          </div>
+          <div className="main2">
+            <div className="subheading">
+              <h1>Preview</h1>
+            </div>
+            <Preview
+              ref={resumeRef}
+              sections={sections}
+              information={resumeInformation}
+              activeColor={activeColor}
+            />
+          </div>
         </div>
-        <Editor
-          sections={sections}
-          information={resumeInformation}
-          setInformation={setResumeInformation}
-        />
-        <div className="subheading">
-          <h1>Preview</h1>
-        </div>
-        <Preview
-          ref={resumeRef}
-          sections={sections}
-          information={resumeInformation}
-          activeColor={activeColor}
-        />
       </div>
     </div>
   );

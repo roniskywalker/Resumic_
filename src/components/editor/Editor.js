@@ -281,112 +281,95 @@ function Editor(props) {
   );
   const achievementBody = (
     <div className={styles.detail}>
-      <div className={styles.column}>
         <label>List your achievements</label>
+      <div className={styles.column}>
         <InputControl
-          placeholder="Line 1"
+          placeholder="Achievement 1"
           value={values.points ? values.points[0] : ""}
           onChange={(event) => handlePointUpdate(event.target.value, 0)}
         />
         <InputControl
-          placeholder="Line 2"
+          placeholder="Achievement 2"
           value={values.points ? values.points[1] : ""}
           onChange={(event) => handlePointUpdate(event.target.value, 1)}
         />
         <InputControl
-          placeholder="Line 3"
+          placeholder="Achievement 3"
           value={values.points ? values.points[2] : ""}
           onChange={(event) => handlePointUpdate(event.target.value, 2)}
         />
         <InputControl
-          placeholder="Line 4"
+          placeholder="Achievement 4"
           value={values.points ? values.points[3] : ""}
           onChange={(event) => handlePointUpdate(event.target.value, 3)}
         />
         <InputControl
-          placeholder="Line 5"
+          placeholder="Achievement 5"
           value={values.points ? values.points[4] : ""}
           onChange={(event) => handlePointUpdate(event.target.value, 4)}
-        />
-        <InputControl
-          placeholder="Line 6"
-          value={values.points ? values.points[5] : ""}
-          onChange={(event) => handlePointUpdate(event.target.value, 5)}
-        />
-        <InputControl
-          placeholder="Line 7"
-          value={values.points ? values.points[6] : ""}
-          onChange={(event) => handlePointUpdate(event.target.value, 6)}
-        />
-        <InputControl
-          placeholder="Line 8"
-          value={values.points ? values.points[7] : ""}
-          onChange={(event) => handlePointUpdate(event.target.value, 7)}
-        />
-        <InputControl
-          placeholder="Line 9"
-          value={values.points ? values.points[8] : ""}
-          onChange={(event) => handlePointUpdate(event.target.value, 8)}
-        />
-        <InputControl
-          placeholder="Line 10"
-          value={values.points ? values.points[9] : ""}
-          onChange={(event) => handlePointUpdate(event.target.value, 9)}
         />
       </div>
     </div>
   );
   const skillBody = (
     <div className={styles.detail}>
-      <div className={styles.column}>
-        <label>List your skills</label>
+      <label>List your skills</label>
+      <div className={styles.row}>
         <InputControl
-          placeholder="Line 1"
+          placeholder="Skill 1"
           value={values.points ? values.points[0] : ""}
           onChange={(event) => handlePointUpdate(event.target.value, 0)}
         />
         <InputControl
-          placeholder="Line 2"
+          placeholder="Skill 2"
           value={values.points ? values.points[1] : ""}
           onChange={(event) => handlePointUpdate(event.target.value, 1)}
         />
+      </div>
+      <div className={styles.row}>
         <InputControl
-          placeholder="Line 3"
+          placeholder="Skill 3"
           value={values.points ? values.points[2] : ""}
           onChange={(event) => handlePointUpdate(event.target.value, 2)}
         />
         <InputControl
-          placeholder="Line 4"
+          placeholder="Skill 4"
           value={values.points ? values.points[3] : ""}
           onChange={(event) => handlePointUpdate(event.target.value, 3)}
         />
+      </div>
+      <div className={styles.row}>
         <InputControl
-          placeholder="Line 5"
+          placeholder="Skill 5"
           value={values.points ? values.points[4] : ""}
           onChange={(event) => handlePointUpdate(event.target.value, 4)}
         />
         <InputControl
-          placeholder="Line 6"
+          placeholder="Skill 6"
           value={values.points ? values.points[5] : ""}
           onChange={(event) => handlePointUpdate(event.target.value, 5)}
         />
+      </div>
+      <div className={styles.row}>
         <InputControl
-          placeholder="Line 7"
+          placeholder="Skill 7"
           value={values.points ? values.points[6] : ""}
           onChange={(event) => handlePointUpdate(event.target.value, 6)}
         />
         <InputControl
-          placeholder="Line 8"
+          placeholder="Skill 8"
           value={values.points ? values.points[7] : ""}
           onChange={(event) => handlePointUpdate(event.target.value, 7)}
         />
+      </div>
+      <div className={styles.row}>
         <InputControl
-          placeholder="Line 9"
+          placeholder="Skill 9"
           value={values.points ? values.points[8] : ""}
           onChange={(event) => handlePointUpdate(event.target.value, 8)}
         />
         <InputControl
-          placeholder="Line 10"
+          placeholder="Skill 10"
           value={values.points ? values.points[9] : ""}
           onChange={(event) => handlePointUpdate(event.target.value, 9)}
         />

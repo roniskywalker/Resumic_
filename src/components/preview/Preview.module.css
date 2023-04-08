@@ -2,7 +2,7 @@
   --color: #239ce2;
   min-width: 700px;
   max-width: 850px;
-  margin: 0px auto 30px;
+  margin: 0px auto;
   flex: 1.2;
   height: fit-content;
   min-height: 900px;
