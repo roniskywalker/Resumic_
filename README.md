@@ -43,7 +43,7 @@ Online Resume Builder❤‍🔥
 
 ## Demo🔮
 
-![Screenshot_20230409_000722](https://user-images.githubusercontent.com/97012708/230737580-b030d42c-c157-47bb-b314-9f864c77575f.png)
+![Screenshot_20230410_235030](https://user-images.githubusercontent.com/97012708/230966643-5972e674-e4a3-48db-bc8d-6aba1a81e9ca.png)
 
 
 ## Thank You😀
