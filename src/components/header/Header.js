@@ -5,7 +5,7 @@ import styles from './Header.module.css';
 function Header(){
     return (
       <div className={styles.mainheader}>
-          <h1>Resumen_</h1>
+          <h1>Resumic_</h1>
           <p>Online Resume Builder</p>
       </div>
     );

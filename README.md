@@ -1,5 +1,5 @@
 
-# Resumen_
+# Resumic_
 
 Online Resume Builder❤‍🔥
 
@@ -19,7 +19,7 @@ Online Resume Builder❤‍🔥
 👉Clone the project
 
 ```bash
-  git clone https://github.com/roniskywalker/Resumen_.git
+  git clone https://github.com/roniskywalker/Resumic_.git
 ```
 
 👉Go to main directory
@@ -28,7 +28,7 @@ Online Resume Builder❤‍🔥
   cd ./Resumen_
 ```
 
-👉Install react dependencies
+👉Delete package-lock.json & Install react dependencies
 
 ```bash
   npm install
@@ -43,7 +43,6 @@ Online Resume Builder❤‍🔥
 
 ## Demo🔮
 
-![Screenshot_20230410_235030](https://user-images.githubusercontent.com/97012708/230966643-5972e674-e4a3-48db-bc8d-6aba1a81e9ca.png)
 
 
 ## Thank You😀
