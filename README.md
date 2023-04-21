@@ -22,12 +22,6 @@ Online Resume Builder❤‍🔥
   git clone https://github.com/roniskywalker/Resumic_.git
 ```
 
-👉Go to main directory
-
-```bash
-  cd ./Resumen_
-```
-
 👉Delete package-lock.json & Install react dependencies
 
 ```bash
